@@ -14,6 +14,7 @@ const Right = () => {
       </div>
       <div className="h-50 my-3 mx-4">
         <h1>Active Jobs</h1>
+        <h5>Working on some add</h5>
       </div>
       <div className="cards px-5 py-3 d-flex flex-wrap  gap-3">
         <Card />

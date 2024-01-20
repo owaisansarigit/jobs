@@ -1,12 +1,8 @@
-// CreateJobForm.jsx
-
 import React, { useState } from "react";
-import "./CreateJobForm.css"; // Import your CSS file for modal styling
+import "./CreateJobForm.css";
 
 const CreateJobForm = ({ onClose }) => {
-  const [formData, setFormData] = useState({
-    // ... (same as before)
-  });
+  const [formData, setFormData] = useState({});
 
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -261,9 +257,35 @@ const CreateJobForm = ({ onClose }) => {
                     <p> Round 1</p>
                     <input type="text" placeholder="Skill Assesment" disabled />
                   </div>
-                  <div>
-                    <button>Add Round </button>
+                  <div className="d-flex addround">
+                    <button className="btn btn-sm btn-dark rounded-4 p-3">
+                      Add Round{" "}
+                    </button>
                   </div>
+                </div>
+
+                <div className="inputs-out">
+                  <div className="inputs">
+                    <label htmlFor="" className="label">
+                      Kindly Check Skills.
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="SEO & SEM"
+                      className="form-control"
+                    />
+                  </div>
+                  <div className="inputs">
+                    <label htmlFor="">Any Platform or Qualification.</label>
+                    <input
+                      type="text"
+                      placeholder="Yes"
+                      className="form-control"
+                    />
+                  </div>
+
+
+                  
                 </div>
               </div>
               <div className="button-container">
