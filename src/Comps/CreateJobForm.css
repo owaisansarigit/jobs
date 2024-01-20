@@ -32,7 +32,7 @@
   right: 0;
 }
 #job-s {
-  width: 916px;
+  width: 716px;
   height: 252px;
   border-radius: 30px;
   background-color: #f6f9fe;
@@ -83,9 +83,35 @@
   text-align: left;
   margin-bottom: 1rem;
 }
-.inputs textarea{
+.inputs textarea {
   width: 100%;
   margin-left: 10rem;
   resize: none;
   background-color: #f5f4f8;
+}
+.test-rounds {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+.test-rounds p {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.test-rounds input {
+  border: 1px solid gray;
+  border-radius: 1rem;
+  margin-top: -1rem;
+  padding: 1rem;
+}
+.round {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: aqua;
 }

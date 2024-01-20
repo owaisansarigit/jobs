@@ -33,8 +33,8 @@ const CreateJobForm = ({ onClose }) => {
       <div className="job-form-container">
         <div className="header-container">
           <h2>Create A Job</h2>
-          <button className="close-btn" onClick={onClose}>
-            Close
+          <button className="close-btn btn" onClick={onClose}>
+            <i class="fa-solid fa-xmark" style={{ fontSize: "2rem" }}></i>
           </button>
         </div>
 
@@ -43,7 +43,13 @@ const CreateJobForm = ({ onClose }) => {
             <>
               <div id="job-s">
                 <div id="job-s-1">
-                  <button type="button" onClick={handleNext}>
+                  <button type="button" onClick={handleNext} className="btn ">
+                    <p>
+                      <i
+                        class="fa-solid fa-clipboard-list"
+                        style={{ fontSize: "6rem", color: "blue" }}
+                      ></i>
+                    </p>
                     Create Job With AI
                   </button>
                 </div>
@@ -161,7 +167,7 @@ const CreateJobForm = ({ onClose }) => {
               <div className="button-container">
                 <button
                   type="button"
-                  className="btn btn-sm btn-dark"
+                  className="btn btn-sm btn-dark mt-3"
                   onClick={handleNext}
                 >
                   Save & Next
@@ -203,12 +209,17 @@ const CreateJobForm = ({ onClose }) => {
                     <div className="inputs">
                       <label htmlFor="" className="label">
                         Intern Responsibilities.
-                        <button
-                          href="/"
-                          className="btn btn-sm btn-primary"
-                        >suggest with AI</button>
+                        <button href="/" className="btn btn-sm btn-primary">
+                          suggest with AI
+                        </button>
                       </label>
-                      <textarea name="" id="" cols="50" rows="0" className="form-control"></textarea>
+                      <textarea
+                        name=""
+                        id=""
+                        cols="50"
+                        rows="0"
+                        className="form-control"
+                      ></textarea>
                     </div>
                     <div className="inputs"></div>
                   </div>
@@ -217,7 +228,48 @@ const CreateJobForm = ({ onClose }) => {
               <div className="button-container">
                 <button
                   type="button"
-                  className="btn btn-sm btn-dark"
+                  className="btn btn-sm btn-dark mt-3"
+                  onClick={handleNext}
+                >
+                  Save & Next
+                </button>
+              </div>
+            </>
+          )}
+
+          {currentStep === 4 && (
+            <>
+              <div className="job-s-container">
+                <div className="jobs-2">
+                  <p>
+                    A job represents a new opening, an open position, or a
+                    vacancy listing. Creating a job will allow you to add
+                    candidates to that job and advertise it on your career page
+                    and job boards.
+                  </p>
+                </div>
+                <div className="test-rounds">
+                  <div className="round">
+                    <p> Round 1</p>
+                    <input type="text" placeholder="Skill Assesment" disabled />
+                  </div>
+                  <div className="round">
+                    <p> Round 1</p>
+                    <input type="text" placeholder="Skill Assesment" disabled />
+                  </div>
+                  <div className="round">
+                    <p> Round 1</p>
+                    <input type="text" placeholder="Skill Assesment" disabled />
+                  </div>
+                  <div>
+                    <button>Add Round </button>
+                  </div>
+                </div>
+              </div>
+              <div className="button-container">
+                <button
+                  type="button"
+                  className="btn btn-sm btn-dark mt-3"
                   onClick={handleNext}
                 >
                   Save & Next
