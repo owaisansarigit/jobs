@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+.full {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+.left {
+  min-height: 100vh;
+  width: 25%;
+}
+.right {
+  background: #f3f6f9;
+  min-height: 100vh;
+  width: 75%;
+}
+a {
+  font-size: 1rem;
+  color: #cdcdcd;
+  text-decoration: none;
+  height: 3rem;
+  padding-left: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 0.5rem;
+}
+a:hover {
+  background-color: #ffd831;
+  color: black;
+  font-size: 1rem;
+}
+.anchead {
+  color: #666e85;
+}
+
+.right-top {
+  width: 100%;
+  height: auto;
+
+  background-color: white;
+}
+.info {
+  border-radius: 1rem;
+  background-color: #f5f8fe;
+}
+.yourorg {
+  font-size: 0.75rem;
+}
+.skill-genic {
+  font-weight: bold;
+}
+.for-search {
+  background-color: #f5f8fe;
+  margin-left: 1rem;
+  height: 2rem;
+}
+.for-search input {
+  background-color: #f5f8fe;
+  border: none;
+  height: 2rem;
+}
+.card {
+  border-radius: 1rem;
+}
+.mybtn {
+  border-radius: 2rem;
+}
