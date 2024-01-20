@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .full {
   min-height: 100vh;
@@ -56,13 +56,30 @@ a:hover {
 }
 .for-search {
   background-color: #f5f8fe;
-  margin-left: 1rem;
-  height: 2rem;
+  margin-left: 5rem;
+  width: 25rem;
+  height: 4rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-radius: 1rem;
 }
 .for-search input {
   background-color: #f5f8fe;
   border: none;
-  height: 2rem;
+
+  height: 3rem;
+  padding: 0.5rem;
+}
+.for-search i{
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  width: 3rem;
+}
+.for-search input:focus {
+  border: transparent;
+  outline: transparent;
 }
 .card {
   border-radius: 1rem;

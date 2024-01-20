@@ -20,9 +20,6 @@ const App = () => {
         <div className="right">
           <Right onShowJobForm={toggleJobForm} />
           {showJobForm && <CreateJobForm onClose={toggleJobForm} />}
-          {!showJobForm && (
-            <button onClick={toggleJobForm}>Show Job Form</button>
-          )}
         </div>
       </div>
     </>
