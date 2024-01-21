@@ -236,7 +236,7 @@ const CreateJobForm = ({ onClose }) => {
                 </div>
                 <span className="form-control">
                   <div className="inputs-out">
-                    <div className="inputs">
+                    <div className="inputs ">
                       <label htmlFor="" className="label">
                         Skill Required.{" "}
                         <button href="/" className="btn btn-sm btn-primary">
@@ -248,7 +248,7 @@ const CreateJobForm = ({ onClose }) => {
                         type="text"
                         name="skillRequired"
                         placeholder="Software Engineer"
-                        className="form-control"
+                        className="form-control "
                         value={formData.skillRequired}
                         onChange={handleInputChange}
                       />
