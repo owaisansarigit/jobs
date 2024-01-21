@@ -8,13 +8,13 @@ const Card = ({job}) => {
           {job.positionName}
         </div>
         <div className="card-text">
-          <i class="fa-solid fa-location-dot me-4"></i>{job.location} India
+          <i className="fa-solid fa-location-dot me-4"></i>{job.location} India
         </div>
         <div className="card-text">
-          <i class="fa-solid fa-tag me-4"></i>{job.minSalary} - {job.maxSalary}
+          <i className="fa-solid fa-tag me-4"></i>{job.minSalary} - {job.maxSalary}
         </div>
         <div className="card-text">
-          <i class="fa-solid fa-link me-4"></i>2 Years Experiance
+          <i className="fa-solid fa-link me-4"></i>2 Years Experiance
         </div>
         <div className="d-flex justify-centent-center gap-2 mt-4">
           <button

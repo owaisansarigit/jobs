@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+
 import "./CreateJobForm.css";
 const CreateJobForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -19,6 +21,8 @@ const CreateJobForm = ({ onClose }) => {
     skillsToCheck: "",
     platformQualification: "",
   });
+  const navigate = useNavigate();
+
 
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -42,10 +46,10 @@ const CreateJobForm = ({ onClose }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData), // Assuming formData is a valid JSON object
+      body: JSON.stringify(formData),
     });
-    console.log(formData);
     onClose();
+    navigate('/');
   };
 
   return (
@@ -54,7 +58,7 @@ const CreateJobForm = ({ onClose }) => {
         <div className="header-container">
           <h2>Create A Job</h2>
           <button className="close-btn btn" onClick={onClose}>
-            <i class="fa-solid fa-xmark" style={{ fontSize: "2rem" }}></i>
+            <i className="fa-solid fa-xmark" style={{ fontSize: "2rem" }}></i>
           </button>
         </div>
 
@@ -66,7 +70,7 @@ const CreateJobForm = ({ onClose }) => {
                   <button type="button" onClick={handleNext} className="btn ">
                     <p>
                       <i
-                        class="fa-solid fa-clipboard-list"
+                        className="fa-solid fa-clipboard-list"
                         style={{ fontSize: "6rem", color: "blue" }}
                       ></i>
                     </p>
