@@ -18,7 +18,7 @@
   min-height: 100vh;
   width: 75%;
 }
-a {
+.leftnav a {
   font-size: 1rem;
   color: #cdcdcd;
   text-decoration: none;
@@ -29,22 +29,22 @@ a {
   align-items: center;
   border-radius: 0.5rem;
 }
-a:hover {
+.leftnav a:hover {
   background-color: #ffd831;
   color: black;
   font-size: 1rem;
 }
-.anchead {
+.leftnav .anchead {
   color: #666e85;
 }
 
 .right-top {
   width: 100%;
   height: auto;
-
   background-color: white;
 }
 .info {
+  width: 10rem;
   border-radius: 1rem;
   background-color: #f5f8fe;
 }
@@ -56,22 +56,15 @@ a:hover {
 }
 .for-search {
   background-color: #f5f8fe;
-  margin-left: 5rem;
   width: 25rem;
-  height: 4rem;
-  display: flex;
-  justify-content: start;
-  align-items: center;
   border-radius: 1rem;
 }
 .for-search input {
   background-color: #f5f8fe;
   border: none;
-
   height: 3rem;
-  padding: 0.5rem;
 }
-.for-search i{
+.for-search i {
   display: flex;
   justify-content: center;
   font-size: 1.5rem;

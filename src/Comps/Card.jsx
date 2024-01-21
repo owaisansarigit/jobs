@@ -1,15 +1,17 @@
 import React from "react";
 
-const Card = () => {
+const Card = ({job}) => {  
   return (
     <div>
       <div className="card p-3 ">
-        <div className="card-title fs-5">Senior Product Designer</div>
-        <div className="card-text">
-          <i class="fa-solid fa-location-dot me-4"></i>Indore,MP India
+        <div className="card-title fs-5">
+          {job.positionName}
         </div>
         <div className="card-text">
-          <i class="fa-solid fa-tag me-4"></i>10000 - 20000
+          <i class="fa-solid fa-location-dot me-4"></i>{job.location} India
+        </div>
+        <div className="card-text">
+          <i class="fa-solid fa-tag me-4"></i>{job.minSalary} - {job.maxSalary}
         </div>
         <div className="card-text">
           <i class="fa-solid fa-link me-4"></i>2 Years Experiance
