@@ -4,10 +4,14 @@ import Card from "./Card";
 import Login from "./Login";
 import TopNav from "./TopNav";
 import Register from "./Register";
+// require("dotenv").config();
+// import dotenv from 'dotenv';
+// dotenv.config();
 
 const Right = ({ onShowJobForm }) => {
   const [jobs, setJobs] = useState([]);
   const [isToggle, setIsToggle] = useState(false);
+  const [loading, setLoading] = useState(true);
   const handleToggle = () => {
     setIsToggle(!isToggle);
   };
@@ -17,9 +21,11 @@ const Right = ({ onShowJobForm }) => {
 
   const fetchJobs = async () => {
     try {
-      let res = await fetch("http://localhost:3000/");
+      let res = await fetch("https://jobwebsite-ejbh.onrender.com/");
+      // let res = await fetch(process.env.REACT_APP_API);
       let data = await res.json();
       setJobs(data);
+      setLoading(false);
     } catch (error) {
       console.error("Error fetching jobs:", error.message);
     }
@@ -74,7 +80,13 @@ const Right = ({ onShowJobForm }) => {
                 </button>
               </div>
               <div className="cards px-5 py-3 d-flex flex-wrap gap-3">
-                {jobs.length > 0 ? (
+                {loading ? (
+                  <div>
+                    <div class="spinner-border" role="status">
+                      <span class="visually-hidden">Loading...</span>
+                    </div>
+                  </div>
+                ) : jobs.length > 0 ? (
                   jobs.map((job) => <Card key={job._id} job={job} />)
                 ) : (
                   <h4>No jobs available</h4>

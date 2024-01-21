@@ -37,7 +37,7 @@ const CreateJobForm = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let res = await fetch("http://localhost:3000/createjob", {
+    let res = await fetch("https://jobwebsite-ejbh.onrender.com/createjob", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
