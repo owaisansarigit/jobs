@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LeftNav from "./Comps/LeftNav";
 import Right from "./Comps/Right";
 import CreateJobForm from "./Comps/CreateJobForm";
@@ -13,15 +14,17 @@ const App = () => {
 
   return (
     <>
-      <div className="full">
-        <div className="left">
-          <LeftNav />
+      <Router>
+        <div className="full">
+          <div className="left">
+            <LeftNav />
+          </div>
+          <div className="right">
+            <Right onShowJobForm={toggleJobForm} />
+            {showJobForm && <CreateJobForm onClose={toggleJobForm} />}
+          </div>
         </div>
-        <div className="right">
-          <Right onShowJobForm={toggleJobForm} />
-          {showJobForm && <CreateJobForm onClose={toggleJobForm} />}
-        </div>
-      </div>
+      </Router>
     </>
   );
 };
