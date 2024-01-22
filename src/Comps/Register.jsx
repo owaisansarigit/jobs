@@ -8,7 +8,6 @@ const Register = () => {
     password: "",
     name: "",
     experience: "",
-
   });
 
   const handleInputChange = (e) => {
@@ -19,29 +18,35 @@ const Register = () => {
     }));
   };
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
+    const { email, password, name, experience } = formData;
 
-
-    console.log("Username:", formData.email);
-    console.log("Password:", formData.password);
-    console.log("Name:", formData.name);
-    console.log("Experience:", formData.experience);
-
-    setFormData({
-      email: "",
-      password: "",
-      name: "",
-      experience: "",
-
-    });
+    try {
+      const response = await fetch("http://localhost:3000/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        console.log(data.msg);
+      } else {
+        console.error(data.error || "Registration failed");
+      }
+    } catch (error) {
+      console.error("Error during registration:", error.message);
+    }
   };
+
   return (
     <div className="container mt-5 w-75">
       <h2>Register</h2>
       <div className="form-control px-5" style={{ backgroundColor: "#f3f6f9" }}>
         <form onSubmit={handleRegister}>
-        <div className="mb-3">
+          <div className="mb-3">
             <label htmlFor="name" className="form-label">
               Name
             </label>
@@ -69,8 +74,7 @@ const Register = () => {
               required
             />
           </div>
-          
-          
+
           <div className="mb-3">
             <label htmlFor="experience" className="form-label">
               Experience
@@ -99,7 +103,7 @@ const Register = () => {
               required
             />
           </div>
-          
+
           <button type="submit" className="btn btn-sm btn-primary">
             Register
           </button>
