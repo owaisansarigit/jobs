@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 
-const Card = ({job}) => {  
+const Card = ({ job }) => {
   return (
     <div>
       <div className="card p-3 ">
-        <div className="card-title fs-5">
-          {job.positionName}
+        <div className="card-title fs-5">{job.positionName}</div>
+        <div className="card-text">
+          <i className="fa-solid fa-location-dot me-4"></i>
+          {job.location}
+          India
         </div>
         <div className="card-text">
-          <i className="fa-solid fa-location-dot me-4"></i>{job.location} India
-        </div>
-        <div className="card-text">
-          <i className="fa-solid fa-tag me-4"></i>{job.minSalary} - {job.maxSalary}
+          <i className="fa-solid fa-tag me-4"></i>
+          {job.minSalary} - {job.maxSalary}
         </div>
         <div className="card-text">
           <i className="fa-solid fa-link me-4"></i>2 Years Experiance

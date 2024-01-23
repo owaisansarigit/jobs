@@ -4,6 +4,7 @@ import LeftNav from "./Comps/LeftNav";
 import Right from "./Comps/Right";
 import CreateJobForm from "./Comps/CreateJobForm";
 import "./App.css";
+import { AppProvider } from "./context";
 
 const App = () => {
   const [showJobForm, setShowJobForm] = useState(false);
@@ -14,17 +15,19 @@ const App = () => {
 
   return (
     <>
-      <Router>
-        <div className="full">
-          <div className="left">
-            <LeftNav />
+      <AppProvider>
+        <Router>
+          <div className="full">
+            <div className="left">
+              <LeftNav />
+            </div>
+            <div className="right">
+              <Right onShowJobForm={toggleJobForm} />
+              {showJobForm && <CreateJobForm onClose={toggleJobForm} />}
+            </div>
           </div>
-          <div className="right">
-            <Right onShowJobForm={toggleJobForm} />
-            {showJobForm && <CreateJobForm onClose={toggleJobForm} />}
-          </div>
-        </div>
-      </Router>
+        </Router>
+      </AppProvider>
     </>
   );
 };

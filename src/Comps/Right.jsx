@@ -21,7 +21,7 @@ const Right = ({ onShowJobForm }) => {
 
   const fetchJobs = async () => {
     try {
-      let res = await fetch("https://jobwebsite-ejbh.onrender.com/");
+      let res = await fetch("http://localhost:3000");
       // let res = await fetch(process.env.REACT_APP_API);
       let data = await res.json();
       setJobs(data);
@@ -82,8 +82,8 @@ const Right = ({ onShowJobForm }) => {
               <div className="cards px-5 py-3 d-flex flex-wrap gap-3">
                 {loading ? (
                   <div>
-                    <div class="spinner-border" role="status">
-                      <span class="visually-hidden">Loading...</span>
+                    <div className="spinner-border" role="status">
+                      <span className="visually-hidden">Loading...</span>
                     </div>
                   </div>
                 ) : jobs.length > 0 ? (

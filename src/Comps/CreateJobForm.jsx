@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
 import "./CreateJobForm.css";
+
 const CreateJobForm = ({ onClose }) => {
   const [formData, setFormData] = useState({
     positionName: "",
@@ -23,7 +23,6 @@ const CreateJobForm = ({ onClose }) => {
   });
   const navigate = useNavigate();
 
-
   const [currentStep, setCurrentStep] = useState(1);
 
   const handleInputChange = (e) => {
@@ -41,7 +40,7 @@ const CreateJobForm = ({ onClose }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let res = await fetch("https://jobwebsite-ejbh.onrender.com/createjob", {
+    let res = await fetch("http://localhost:3000/createjob", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -49,7 +48,7 @@ const CreateJobForm = ({ onClose }) => {
       body: JSON.stringify(formData),
     });
     onClose();
-    navigate('/');
+    navigate("/");
   };
 
   return (
