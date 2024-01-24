@@ -25,6 +25,7 @@ const Right = ({ onShowJobForm }) => {
       // let res = await fetch(process.env.REACT_APP_API);
       let data = await res.json();
       setJobs(data);
+      jobs.length === 0 ? setLoading(false) : null;
       setLoading(false);
     } catch (error) {
       console.error("Error fetching jobs:", error.message);

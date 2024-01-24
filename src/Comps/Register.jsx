@@ -1,8 +1,8 @@
-// Register.js
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Register = () => {
+  let navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -32,7 +32,8 @@ const Register = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        console.log(data.msg);
+        alert("user Registered !");
+        navigate("/");
       } else {
         console.error(data.error || "Registration failed");
       }
